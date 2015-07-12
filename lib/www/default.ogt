@@ -1,0 +1,127 @@
+<?php
+/**
+ * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ *
+ * Licensed under The MIT License
+ * For full copyright and license information, please see the LICENSE.txt
+ * Redistributions of files must retain the above copyright notice.
+ *
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @link          http://cakephp.org CakePHP(tm) Project
+ * @since         0.10.0
+ * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ */
+?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <?php // $this->Html->charset() ?>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            organa :
+            <?php // $this->fetch('title') ?>
+        </title>
+        <?php // $this->Html->meta('icon') ?>
+
+        <?php // $this->Html->css('bootstrap.css') ?>
+        <?php // $this->Html->css('rowsandcols.css') ?>
+        <?php // $this->Html->css('jquery.jscrollpane.css') ?>
+        <?php // $this->Html->css('style.css') ?>
+
+        <?php // $this->Html->script('jquery.min.js') ?>
+        <?php // $this->Html->script('bootstrap.min.js') ?>
+        <?php // $this->Html->script('jquery.mousewheel.js') ?>
+        <?php // $this->Html->script('jquery.jscrollpane.min.js') ?>
+        <script>
+            $(document).ready(function() {
+                $('.core_content-box').jScrollPane();
+            });
+            $(window).resize(function() {
+                $('.core_content-box').jScrollPane();
+            });
+        </script>
+
+        <?php // $this->fetch('meta') ?>
+        <?php // $this->fetch('css') ?>
+        <?php // $this->fetch('script') ?>
+    </head>
+    <body>
+        <?php //$this->Flash->render();?>
+        <div class="col-tp-12 col-tl-2 col-dt-2" id="core_navigation">
+            <div class="row">
+                <div class="spacer"></div>
+                <div class="col-tp-2 col-tl-9 col-tl-offset-1-5 col-dt-9 col-dt-offset-1-5">
+                    <?php
+//                    echo $this->Html->image('organa.png', array('class' => 'img-responsive'));
+                    ?>
+                </div>
+            </div>
+                <div class="spacer"></div>
+            <div class="row">
+                <div id="core_main-navigation">
+                    <?php // $this->cell('Navigation::main'); ?>
+                </div>
+            </div>
+        </div>
+        <div class="col-tp-12 col-tl-10 col-dt-10" id = "core_right">
+            <div class = "row" id = "core_headline_outer">
+                <div class = "col-tl-12 col-dt-12" id = "core_headline">
+                    <?php
+//                    echo $this->Html->image('organa.png', array('height' => '38px'));
+                    ?>
+                    <div class="pull-right dropdown">
+                        <div class="dropdown-toggle" id="core_user-navigation" data-toggle="dropdown">
+                            <div id="core_userimage">
+                                <?php // $this->Html->image('default-user-image.png', array('height' => '38px', 'class' => 'img-rounded')); ?>
+                                <span class="caret"></span>
+                            </div>
+                        </div>
+                        <ul class="dropdown-menu">
+                            <?php // $this->cell('Navigation::user'); ?>
+                            <li class="divider"></li>
+                            <li><?php //$this->Html->link('Ausloggen', array('controller' => 'users', 'action' => 'logout'), array('icon' => 'off'));?></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class = "row" id = "core_content_outer">
+                <?php
+//                if ($this->fetch('description')) {
+                    ?>
+                    <div class = "col-tp-12 col-tl-8 col-dt-8" id = "core_content">
+                        <div class = "core_content-box">
+                            <div class = "content-wrapper">
+                                <?php // $this->fetch('content');
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-tp-12 col-tl-4 col-dt-4" id="core_description">
+                        <div class="core_content-box">
+                            <div class="content-wrapper">
+                                <?php // $this->fetch('description'); // $this->Description->show(); ?>
+                            </div>
+                        </div>
+                    </div>
+                    <?php
+//                } else {
+                    ?>
+                    <div class="col-tp-12 col-tl-12 col-dt-12" id = "core_content">
+                        <div class = "core_content-box">
+                            <div class = "content-wrapper">
+                                <?php // $this->fetch('content');
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+                    <?php
+//                }
+                ?>
+            </div>
+        </div>
+    </body>
+</html>
+
+
+
